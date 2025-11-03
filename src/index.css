@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Premium Light Mode - Off-white elegance */
+    --background: 30 20% 97%;
+    --foreground: 220 15% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 10%;
+
+    /* Google Blue Primary */
+    --primary: 217 89% 61%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Google Red Accent */
+    --accent-red: 4 90% 58%;
+    
+    /* Google Yellow Accent */
+    --accent-yellow: 43 96% 56%;
+    
+    /* Google Green Accent */
+    --accent-green: 142 71% 45%;
+
+    --secondary: 220 13% 91%;
+    --secondary-foreground: 220 15% 10%;
+
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 217 89% 61%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 4 90% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 217 89% 61%;
+
+    --radius: 1rem;
+
+    /* Premium Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 220 13% 88% / 0.3;
+
+    /* Premium Shadows */
+    --shadow-sm: 0 2px 8px hsl(220 15% 10% / 0.04);
+    --shadow-md: 0 4px 16px hsl(220 15% 10% / 0.08);
+    --shadow-lg: 0 8px 32px hsl(220 15% 10% / 0.12);
+    --shadow-glow: 0 0 40px hsl(217 89% 61% / 0.15);
+  }
+
+  .dark {
+    /* Premium Dark Mode - Charcoal sophistication */
+    --background: 220 20% 6%;
+    --foreground: 30 20% 97%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 30 20% 97%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 30 20% 97%;
+
+    /* Google Blue Primary (brighter in dark) */
+    --primary: 217 89% 65%;
+    --primary-foreground: 220 20% 6%;
+
+    /* Google Red Accent (neon in dark) */
+    --accent-red: 4 90% 62%;
+    
+    /* Google Yellow Accent (neon in dark) */
+    --accent-yellow: 43 96% 60%;
+    
+    /* Google Green Accent (neon in dark) */
+    --accent-green: 142 71% 50%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 30 20% 97%;
+
+    --muted: 220 15% 13%;
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 217 89% 65%;
+    --accent-foreground: 220 20% 6%;
+
+    --destructive: 4 90% 62%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 217 89% 65%;
+
+    /* Dark Glassmorphism */
+    --glass-bg: 220 18% 10% / 0.7;
+    --glass-border: 220 15% 25% / 0.3;
+
+    /* Dark Shadows with glow */
+    --shadow-sm: 0 2px 8px hsl(220 20% 0% / 0.3);
+    --shadow-md: 0 4px 16px hsl(220 20% 0% / 0.4);
+    --shadow-lg: 0 8px 32px hsl(220 20% 0% / 0.5);
+    --shadow-glow: 0 0 40px hsl(217 89% 65% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border transition-colors duration-300;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Premium Glass Effect */
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid hsl(var(--glass-border));
+  }
+
+  /* Premium Shadows */
+  .shadow-premium {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Premium Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, 
+      hsl(var(--primary)), 
+      hsl(var(--accent-red)), 
+      hsl(var(--accent-yellow)),
+      hsl(var(--accent-green))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Floating Animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Shimmer Effect */
+  @keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--primary) / 0.1),
+      transparent
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 3s infinite;
+  }
+}
