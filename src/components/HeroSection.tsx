@@ -1,6 +1,6 @@
 import { ArrowRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-devfest.jpg";
+import heroImage from "@/assets/devfestherosection.jpeg";
 import abstractShape from "@/assets/abstract-shape.png";
 
 export function HeroSection() {
@@ -20,15 +20,25 @@ export function HeroSection() {
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              DevFest <span className="gradient-text">Mt. Kenya</span> 2025
+              DevFest <span className="liquid-shimmer">Mt. Kenya</span> 2025
             </h1>
 
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-xl">
-              A celebration of developers, innovation & AI.
-            </p>
+            <h4 className=" text-muted-foreground max-w-xl mt-0 mb-0">
+              Unleashing Digital Transformation
+            </h4>
 
-            <div className="flex flex-wrap gap-4">
-              <Button variant="hero" size="xl" className="group">
+            <div className="flex flex-wrap gap-2">
+              <Button
+                variant="hero"
+                size="xl"
+                className="group"
+                onClick={() => {
+                  const el = document.getElementById("program");
+                  if (el) {
+                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                }}
+              >
                 View Program
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -68,7 +78,7 @@ export function HeroSection() {
                 alt="DevFest developers collaborating"
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" /> */}
             </div>
 
             {/* Floating Badge */}

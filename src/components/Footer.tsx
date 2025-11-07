@@ -7,7 +7,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Branding */}
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold gradient-text mb-2">DevFest Mt. Kenya 2025</h3>
+            <h3 className="text-xl font-bold liquid-shimmer mb-2">DevFest Mt. Kenya 2025</h3>
             <p className="text-sm text-muted-foreground">
               Organized by GDG Mt. Kenya
             </p>
