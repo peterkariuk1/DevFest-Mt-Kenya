@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
+import dfLogo from '../assets/DF25.png';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,7 +17,7 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ["Home", "About", "Program", "Speakers", "FAQ", "Register"];
+  const navItems = ["Home", "Program", "Speakers"];
 
   return (
     <nav
@@ -29,9 +30,7 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#home" className="text-xl font-bold gradient-text">
-            DevFest 2025
-          </a>
+          <img className="w-[10rem]" src={dfLogo} alt="logo" />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">

@@ -4,50 +4,68 @@ import { Clock, Code, Cloud, Brain, Users, Camera } from "lucide-react";
 const programItems = [
   {
     time: "9:00 AM",
-    title: "Opening Ceremony & Welcome Remarks",
+    title: "Welcoming and House Rules",
     icon: Users,
     color: "text-primary",
+  },
+  {
+    time: "9:15 AM",
+    title: "Opening Keynote & Partner Spotlight",
+    icon: Brain,
+    color: "text-accent-primary",
   },
   {
     time: "9:30 AM",
-    title: "Keynote: Future of AI & Innovation",
-    icon: Brain,
+    title: "Mt. Kenya Hub Keynote",
+    icon: Code,
     color: "text-accent-red",
+  },
+  {
+    time: "10:00 AM",
+    title: "Partner Introduction",
+    icon: Users,
+    color: "text-accent-yellow",
   },
   {
     time: "10:30 AM",
-    title: "Technical Sessions Begin",
+    title: "Google Resources Prerequisites",
     icon: Code,
-    color: "text-accent-yellow",
+    color: "text-green",
   },
   {
     time: "11:00 AM",
-    title: "Android, Web, and AI Tracks Split",
+    title: "Hands-on Workshop 1",
     icon: Code,
-    color: "text-accent-green",
+    color: "text-accent-primary",
   },
   {
-    time: "1:00 PM",
-    title: "Lunch + Networking",
-    icon: Users,
-    color: "text-primary",
-  },
-  {
-    time: "2:00 PM",
-    title: "Workshops & Hands-On Labs",
-    icon: Code,
+    time: "11:45 AM",
+    title: "PromptBI Keynote",
+    icon: Cloud,
     color: "text-accent-red",
   },
   {
-    time: "4:00 PM",
-    title: "Cloud & DevOps Presentations",
-    icon: Cloud,
+    time: "12:15 PM",
+    title: "Hands-on Workshop 2",
+    icon: Code,
     color: "text-accent-yellow",
   },
   {
-    time: "5:00 PM",
-    title: "Closing & Group Photos",
-    icon: Camera,
+    time: "1:00 PM",
+    title: "Lunch & Networking",
+    icon: Users,
+    color: "text-accent-yellow",
+  },
+  {
+    time: "2:00 PM",
+    title: "Panel discussion",
+    icon: Users,
+    color: "text-accent-green",
+  },
+  {
+    time: "3:00 PM",
+    title: "Student Showcase & Closing",
+    icon: Users,
     color: "text-accent-green",
   },
 ];
@@ -61,7 +79,9 @@ export function ProgramSection() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = itemRefs.current.indexOf(entry.target as HTMLDivElement);
+            const index = itemRefs.current.indexOf(
+              entry.target as HTMLDivElement
+            );
             if (index !== -1 && !visibleItems.includes(index)) {
               setVisibleItems((prev) => [...prev, index]);
             }
@@ -97,13 +117,15 @@ export function ProgramSection() {
             {programItems.map((item, index) => {
               const Icon = item.icon;
               const isVisible = visibleItems.includes(index);
-              
+
               return (
                 <div
                   key={index}
                   ref={(el) => (itemRefs.current[index] = el)}
                   className={`relative transition-all duration-700 ${
-                    isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+                    isVisible
+                      ? "opacity-100 translate-x-0"
+                      : "opacity-0 translate-x-10"
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
@@ -114,15 +136,21 @@ export function ProgramSection() {
                     {/* Content Card */}
                     <div className="ml-20 md:ml-auto md:w-5/12 glass p-6 rounded-2xl shadow-premium hover:shadow-glow transition-smooth group">
                       <div className="flex items-start gap-4">
-                        <div className={`p-3 rounded-xl bg-muted ${item.color} group-hover:scale-110 transition-smooth`}>
+                        <div
+                          className={`p-3 rounded-xl bg-muted ${item.color} group-hover:scale-110 transition-smooth`}
+                        >
                           <Icon className="w-6 h-6" />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
                             <Clock className="w-4 h-4 text-muted-foreground" />
-                            <span className="text-sm font-semibold">{item.time}</span>
+                            <span className="text-sm font-semibold">
+                              {item.time}
+                            </span>
                           </div>
-                          <h3 className="text-lg font-semibold">{item.title}</h3>
+                          <h3 className="text-lg font-semibold">
+                            {item.title}
+                          </h3>
                         </div>
                       </div>
                     </div>
