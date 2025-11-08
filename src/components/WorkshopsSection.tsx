@@ -9,12 +9,7 @@ const workshops = [
     speaker: "Ian Dancan",
     venue: "RC1",
   },
-  {
-    title:
-      "Al Ethics in Africa: Building for Communities, Not Just Corporations",
-    speaker: "Chris Achinga",
-    venue: "RC2",
-  },
+
   {
     title: "From Manual Mayhem to Automated Zen: Our CI/CD Journey in GCP",
     speaker: "Samuel Macharia",
@@ -50,14 +45,16 @@ const workshops = [
     speaker: "Gilbert Chris",
     venue: "RC1",
   },
+
   {
     title: "Unpacking Angular Signals: What the Docs Don't Tell You",
     speaker: "Alex Muturi",
     venue: "RC2",
   },
   {
-    title: "Building Al Agents with Google ADK: From Concept to Code",
-    speaker: "Simon Juma",
+    title:
+      "Al Ethics in Africa: Building for Communities, Not Just Corporations",
+    speaker: "Chris Achinga",
     venue: "RC3",
   },
   {
@@ -65,12 +62,6 @@ const workshops = [
       "Hosting Decentralized Applications with Walrus Protocol: A Hands-On Workshop",
     speaker: "Erick Okello",
     venue: "RC4",
-  },
-  {
-    title:
-      "Building Agentic Al Workflows with xAl on Vertex Al: From Code to Action",
-    speaker: "Manai Mortadha",
-    venue: "RC5",
   },
   {
     title: "Demystifying the Al Black Box through Transparent UX Patterns",
