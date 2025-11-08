@@ -19,7 +19,7 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className="text-6xl md:text-8xl font-bold leading-tight">
               DevFest <span className="liquid-shimmer">Mt. Kenya</span> 2025
             </h1>
 
