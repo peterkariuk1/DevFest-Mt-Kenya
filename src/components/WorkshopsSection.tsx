@@ -16,6 +16,11 @@ const workshops = [
     venue: "RC4",
   },
   {
+    title: "From Manual Mayhem to Automated Zen: Our CI/CD Journey in GCP",
+    speaker: "Samuel Macharia",
+    venue: "RC4",
+  },
+  {
     title:
       "Building Scalable Smart Homes on the Cloud: An ESP32 + Firebase Journey",
     speaker: "Mwangi Ephraim",
